@@ -44,3 +44,25 @@ def my_slice(coll, start=None, end=None):
         normalized_end = end
 
     return coll[normalized_start:normalized_end]
+
+
+import unittest
+from utils.arrs import get
+
+
+
+
+class TestGet(unittest.TestCase):
+    def test_existing_index(self):
+        array = [1, 2, 3, 4, 5]
+        index = 2
+        expected_result = 3
+        result = get(array, index)
+        self.assertEqual(result, expected_result)
+
+    def test_non_existing_index(self):
+        array = [1, 2, 3, 4, 5]
+        index = 10
+        default_value = "Not found"
+        result = get(array, index, default=default_value)
+        self.assertEqual(result, default_value)
