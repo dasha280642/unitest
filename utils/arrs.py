@@ -50,8 +50,6 @@ import unittest
 from utils.arrs import get
 
 
-
-
 class TestGet(unittest.TestCase):
     def test_existing_index(self):
         array = [1, 2, 3, 4, 5]
